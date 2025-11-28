@@ -1,18 +1,20 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 import FullWidthImage from 'react-native-fullwidth-image';
+import Icons from '../../UI/Icons';
+import { Button, ButtonTray } from '../../UI/Button';
 const ModuleView = ({ module }) => {
   // Initialisations ------------------------------
   // State ----------------------------------------
   // Handlers -------------------------------------
 
   // View -----------------------------------------
-  return (
+   return (
     <View style={styles.container}>
-      <Image source={{ uri: module.ModuleImage }} style={styles.image} />
+      <FullWidthImage source={{ uri: module.ModuleImage }} style={styles.image} />
 
       <View style={styles.infoTray}>
         <Text style={styles.boldText}>
-          {module.ModuleCode}  {module.ModuleName}
+          {module.ModuleCode} {module.ModuleName}
         </Text>
 
         <Text style={styles.text}>
@@ -20,10 +22,21 @@ const ModuleView = ({ module }) => {
         </Text>
 
         <Text style={styles.text}>
-          {module.ModuleLeaderName}  
+          {module.ModuleLeaderName}
           <Text style={styles.dimText}>(Module Leader)</Text>
         </Text>
       </View>
+
+      <ButtonTray>
+        <Button icon={Icons.Edit()} label="Modify" />
+
+        <Button
+          icon={Icons.Delete()}
+          label="Delete"
+          styleLabel={{ color: 'red' }}
+          styleButton={{ backgroundColor: 'mistyrose' }}
+        />
+      </ButtonTray>
     </View>
   );
 };
