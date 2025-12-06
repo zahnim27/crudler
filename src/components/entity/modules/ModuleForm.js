@@ -9,7 +9,7 @@ const defaultModule = {
   ModuleLevel: null,
   ModuleLeaderID: null,
   ModuleLeaderName: null,
-  ModuleImage: null,
+  ModuleImageURL: null,
 };
 
 const ModuleForm = ({originalModule,onSubmit, onCancel}) => {
@@ -71,8 +71,8 @@ const ModuleForm = ({originalModule,onSubmit, onCancel}) => {
 
       <Form.InputText
         label="Module image URL"
-        value={module.ModuleImage}
-        onChange={(value) => handleChange("ModuleImage", value)}
+        value={module.ModuleImageURL}
+        onChange={(value) => handleChange("ModuleImageURL", value)}
       />
     </Form>
   );
